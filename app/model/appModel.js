@@ -50,7 +50,8 @@ Heartrate.getAllRates = function (result) {
 };
 
 Heartrate.updateById = function (id, rate, result){
-    sql.query("UPDATE HeartBeatDate set Rate = ? WHERE RateID = ?", [rate.rate, id], function(err, res) {
+    console.log(rate);
+    sql.query("UPDATE HeartBeatData set Rate = ? WHERE RateID = ?", [rate.rate, id], function(err, res) {
         if(err) {
             console.log("error: ", err);
             result(err, null);

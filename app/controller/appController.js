@@ -46,7 +46,8 @@ exports.get_a_heartrate = function(req, res) {
 };
 
 exports.update_a_heartrate = function(req, res) {
-    Heartrate.updateById(req.params.rateId, new Heartrate(req.body), function(err, rate) {
+    console.log(req.body + " " +req.params.rateId);
+    Heartrate.updateById(req.params.rateId, req.body, function(err, rate) {
         if(err){
             res.send(err);
         }else{
